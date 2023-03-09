@@ -1,0 +1,32 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="JavaScript/jquery-1.8.3.js"></script>
+    <script src="JavaScript/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="JavaScript/authenticate.js"></script>
+    <script src="JavaScript/filemanager.js"></script>
+    <script src="JavaScript/backgroundtask.js"></script>
+
+</head>
+<body>
+    
+    <div id="AP_Container">
+    </div>
+    <script type="text/javascript">
+        LoadModule($("#AP_Container"), "FormRender", "FormRender", function () {
+            document.cookie = "UserAuth_ExternalHosting=" + escape(JSON.stringify(externalHostingCookie));
+            head.loadFiles({
+                components: [{
+                    componentUrl: (window.FormRenderbaseURL ? window.FormRenderbaseURL : ""),
+                    files: ["BaseFormRender.js"]
+                }]
+            });
+        });
+    </script>
+
+
+</body>
+</html>
+
